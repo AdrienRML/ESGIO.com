@@ -8,15 +8,15 @@ const plans = [
     name: "PME",
     price: "199",
     period: "/mois",
-    description: "Pour les entreprises mono-entite soumises a la CSRD.",
+    description: "Pour les entreprises mono-entité soumises à la CSRD.",
     features: [
-      "Acces aux 12 standards ESRS",
+      "Accès aux 12 standards ESRS",
       "1 utilisateur administrateur",
       "OCR & Import de documents",
-      "Generation de rapport automatique",
-      "Dossier de preuves integre",
+      "Génération de rapport automatique",
+      "Dossier de preuves intégré",
       "Support par email",
-      "Hebergement EU souverain",
+      "Hébergement EU souverain",
     ],
     cta: "Commencer l'essai gratuit",
     highlighted: false,
@@ -30,14 +30,14 @@ const plans = [
     features: [
       "Tout le plan PME, plus :",
       "Multi-filiales & consolidation",
-      "Utilisateurs illimites",
+      "Utilisateurs illimités",
       "API d'importation ERP (SAP, Oracle)",
-      "Acces Lecteur pour auditeur externe",
-      "Dashboard de pilotage avance",
-      "Support prioritaire & CSM dedie",
+      "Accès Lecteur pour auditeur externe",
+      "Dashboard de pilotage avancé",
+      "Support prioritaire & CSM dédié",
       "Connecteurs custom sur demande",
     ],
-    cta: "Contacter l'equipe commerciale",
+    cta: "Contacter l'équipe commerciale",
     highlighted: true,
     badge: "Le plus populaire",
   },
@@ -45,16 +45,16 @@ const plans = [
 
 const addons = [
   {
-    name: "Certification Assistee",
+    name: "Certification Assistée",
     price: "2 500 - 5 000 €",
     description:
-      "Revue finale du rapport par notre IA 'Auditor Mode' avant soumission officielle a votre CAC.",
+      "Revue finale du rapport par notre IA 'Auditor Mode' avant soumission officielle à votre CAC.",
   },
   {
     name: "Connecteur ERP Custom",
     price: "Sur devis",
     description:
-      "Integration sur mesure avec vos systemes complexes (SAP S/4HANA, Oracle Cloud, etc.).",
+      "Intégration sur mesure avec vos systèmes complexes (SAP S/4HANA, Oracle Cloud, etc.).",
   },
 ];
 
@@ -73,10 +73,10 @@ export default function PricingSection() {
           </span>
           <h2 className="mt-6 text-3xl font-bold text-foreground sm:text-4xl lg:text-5xl">
             Un investissement,{" "}
-            <span className="text-primary">pas un cout</span>
+            <span className="text-primary">pas un coût</span>
           </h2>
           <p className="mt-4 text-lg text-muted">
-            75% moins cher qu&apos;un cabinet de conseil. ROI immediat des le
+            75% moins cher qu&apos;un cabinet de conseil. ROI immédiat dès le
             premier rapport.
           </p>
         </motion.div>
@@ -151,7 +151,7 @@ export default function PricingSection() {
           className="mx-auto mt-12 max-w-4xl"
         >
           <h3 className="text-center text-lg font-semibold text-foreground mb-6">
-            Add-ons a haute valeur ajoutee
+            Add-ons à haute valeur ajoutée
           </h3>
           <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
             {addons.map((addon) => (
@@ -171,7 +171,7 @@ export default function PricingSection() {
           </div>
         </motion.div>
 
-        {/* Model Wholesale */}
+        {/* Modèle Wholesale */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -179,10 +179,10 @@ export default function PricingSection() {
           className="mx-auto mt-12 max-w-4xl rounded-2xl border border-primary/20 bg-primary/5 p-8 text-center"
         >
           <h3 className="text-xl font-bold text-foreground">
-            Vous etes un cabinet d&apos;expertise comptable ?
+            Vous êtes un cabinet d&apos;expertise comptable ?
           </h3>
           <p className="mt-2 text-muted">
-            Decouvrez notre modele Partenaire (Wholesale). Utilisez ESGIO pour
+            Découvrez notre modèle Partenaire (Wholesale). Utilisez ESGIO pour
             servir vos propres clients avec une licence par dossier. Marge
             garantie.
           </p>

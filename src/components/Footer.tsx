@@ -14,8 +14,8 @@ export default function Footer() {
               </span>
             </a>
             <p className="mt-4 max-w-xs text-sm text-muted leading-relaxed">
-              La plateforme IA de conformite CSRD. Automatisez votre reporting
-              de durabilite et restez conforme a la reglementation europeenne.
+              La plateforme IA de conformité CSRD. Automatisez votre reporting
+              de durabilité et restez conforme à la réglementation européenne.
             </p>
           </div>
 
@@ -36,7 +36,7 @@ export default function Footer() {
                   href="#features"
                   className="text-sm text-muted transition-colors hover:text-foreground"
                 >
-                  Fonctionnalites
+                  Fonctionnalités
                 </a>
               </li>
               <li>
@@ -69,7 +69,7 @@ export default function Footer() {
                   href="#"
                   className="text-sm text-muted transition-colors hover:text-foreground"
                 >
-                  A propos
+                  À propos
                 </a>
               </li>
               <li>
@@ -85,7 +85,7 @@ export default function Footer() {
                   href="#"
                   className="text-sm text-muted transition-colors hover:text-foreground"
                 >
-                  Carrieres
+                  Carrières
                 </a>
               </li>
               <li>
@@ -101,14 +101,14 @@ export default function Footer() {
 
           {/* Legal */}
           <div>
-            <h4 className="text-sm font-semibold text-foreground">Legal</h4>
+            <h4 className="text-sm font-semibold text-foreground">Légal</h4>
             <ul className="mt-4 space-y-3">
               <li>
                 <a
                   href="#"
                   className="text-sm text-muted transition-colors hover:text-foreground"
                 >
-                  Mentions legales
+                  Mentions légales
                 </a>
               </li>
               <li>
@@ -116,7 +116,7 @@ export default function Footer() {
                   href="#"
                   className="text-sm text-muted transition-colors hover:text-foreground"
                 >
-                  Politique de confidentialite
+                  Politique de confidentialité
                 </a>
               </li>
               <li>
@@ -132,7 +132,7 @@ export default function Footer() {
                   href="#"
                   className="text-sm text-muted transition-colors hover:text-foreground"
                 >
-                  Securite & RGPD
+                  Sécurité & RGPD
                 </a>
               </li>
             </ul>
@@ -142,13 +142,13 @@ export default function Footer() {
         {/* Bottom */}
         <div className="mt-12 flex flex-col items-center justify-between gap-4 border-t border-border pt-8 sm:flex-row">
           <p className="text-sm text-muted">
-            &copy; {new Date().getFullYear()} ESGIO. Tous droits reserves.
-            Hebergement souverain EU.
+            &copy; {new Date().getFullYear()} ESGIO. Tous droits réservés.
+            Hébergement souverain EU.
           </p>
           <div className="flex items-center gap-2">
             <span className="inline-flex items-center gap-1.5 rounded-full border border-green-200 bg-green-50 px-3 py-1 text-xs font-medium text-green-700">
               <span className="h-1.5 w-1.5 rounded-full bg-green-500" />
-              Systeme operationnel
+              Système opérationnel
             </span>
           </div>
         </div>

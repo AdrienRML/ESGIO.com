@@ -22,7 +22,7 @@ export default function FloatingCTA() {
         href="#cta"
         className="flex w-full items-center justify-center gap-2 rounded-xl bg-primary py-3.5 text-sm font-semibold text-white shadow-lg shadow-primary/25"
       >
-        Demander une demo gratuite
+        Demander une démo gratuite
         <ArrowRight size={16} />
       </a>
     </div>

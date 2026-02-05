@@ -17,49 +17,49 @@ const features = [
     icon: ScanSearch,
     title: "OCR & Extraction IA",
     description:
-      "Scannez vos factures, rapports internes et documents RH. Notre IA extrait automatiquement les donnees ESG pertinentes.",
+      "Scannez vos factures, rapports internes et documents RH. Notre IA extrait automatiquement les données ESG pertinentes.",
   },
   {
     icon: GitMerge,
     title: "Mapping ESRS Automatique",
     description:
-      "Association intelligente de chaque donnee aux standards ESRS correspondants (E1-E5, S1-S4, G1).",
+      "Association intelligente de chaque donnée aux standards ESRS correspondants (E1-E5, S1-S4, G1).",
   },
   {
     icon: FileText,
-    title: "Generation de Rapport",
+    title: "Génération de Rapport",
     description:
-      "Rapport de durabilite complet genere automatiquement, conforme aux exigences de la directive CSRD.",
+      "Rapport de durabilité complet généré automatiquement, conforme aux exigences de la directive CSRD.",
   },
   {
     icon: ShieldAlert,
     title: "Auditor Mode",
     description:
-      "Mode de revue pre-audit qui identifie les faiblesses et ecarts avant la verification par votre CAC.",
+      "Mode de revue pré-audit qui identifie les faiblesses et écarts avant la vérification par votre CAC.",
   },
   {
     icon: Users,
     title: "Multi-filiales",
     description:
-      "Consolidation automatique des donnees de toutes vos entites. Chaque filiale contribue, le siege consolide.",
+      "Consolidation automatique des données de toutes vos entités. Chaque filiale contribue, le siège consolide.",
   },
   {
     icon: Plug,
     title: "Connecteurs ERP",
     description:
-      "Integration native avec SAP, Oracle, Sage et vos principaux outils. Import API automatise.",
+      "Intégration native avec SAP, Oracle, Sage et vos principaux outils. Import API automatisé.",
   },
   {
     icon: BarChart3,
-    title: "Dashboard en temps reel",
+    title: "Dashboard en temps réel",
     description:
-      "Suivez votre score de completude, les ecarts de conformite et le time-to-report en temps reel.",
+      "Suivez votre score de complétude, les écarts de conformité et le time-to-report en temps réel.",
   },
   {
     icon: Globe,
-    title: "Acces Auditeur",
+    title: "Accès Auditeur",
     description:
-      "Donnez un acces en lecture seule a votre auditeur externe. Dossier de preuves accessible 24/7.",
+      "Donnez un accès en lecture seule à votre auditeur externe. Dossier de preuves accessible 24/7.",
   },
 ];
 
@@ -74,14 +74,14 @@ export default function FeaturesSection() {
           className="mx-auto max-w-3xl text-center"
         >
           <span className="inline-flex items-center gap-2 rounded-full border border-primary/20 bg-primary/5 px-4 py-1.5 text-sm font-medium text-primary">
-            Fonctionnalites
+            Fonctionnalités
           </span>
           <h2 className="mt-6 text-3xl font-bold text-foreground sm:text-4xl lg:text-5xl">
-            Tout ce qu&apos;il faut pour etre{" "}
+            Tout ce qu&apos;il faut pour être{" "}
             <span className="text-primary">conforme</span>
           </h2>
           <p className="mt-4 text-lg text-muted">
-            Une plateforme complete qui couvre l&apos;integralite du cycle de
+            Une plateforme complète qui couvre l&apos;intégralité du cycle de
             reporting CSRD.
           </p>
         </motion.div>

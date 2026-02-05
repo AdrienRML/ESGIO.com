@@ -7,37 +7,37 @@ const badges = [
   {
     icon: Shield,
     title: "RGPD Conforme",
-    description: "Traitement des donnees 100% conforme au reglement europeen.",
+    description: "Traitement des données 100% conforme au règlement européen.",
   },
   {
     icon: Server,
-    title: "Hebergement EU",
+    title: "Hébergement EU",
     description:
-      "Serveurs exclusivement situes dans l'Union Europeenne. Souverainete garantie.",
+      "Serveurs exclusivement situés dans l'Union Européenne. Souveraineté garantie.",
   },
   {
     icon: Lock,
     title: "Chiffrement E2E",
     description:
-      "Chiffrement de bout en bout de toutes vos donnees financieres et sociales.",
+      "Chiffrement de bout en bout de toutes vos données financières et sociales.",
   },
   {
     icon: FileCheck,
-    title: "Piste d'Audit Complete",
+    title: "Piste d'Audit Complète",
     description:
-      "Chaque action, modification et import est trace et horodate automatiquement.",
+      "Chaque action, modification et import est tracé et horodaté automatiquement.",
   },
   {
     icon: Scale,
     title: "Conforme EFRAG",
     description:
-      "Standards mis a jour des que l'EFRAG publie une modification reglementaire.",
+      "Standards mis à jour dès que l'EFRAG publie une modification réglementaire.",
   },
   {
     icon: Globe,
     title: "Multi-juridictions",
     description:
-      "Support des specificites reglementaires par pays au sein de l'UE.",
+      "Support des spécificités réglementaires par pays au sein de l'UE.",
   },
 ];
 
@@ -52,10 +52,10 @@ export default function TrustBadges() {
           className="text-center"
         >
           <h3 className="text-lg font-bold text-foreground sm:text-xl">
-            Securite & Conformite de niveau entreprise
+            Sécurité & Conformité de niveau entreprise
           </h3>
           <p className="mt-2 text-sm text-muted">
-            Vos donnees sont protegees selon les standards les plus exigeants.
+            Vos données sont protégées selon les standards les plus exigeants.
           </p>
         </motion.div>
 

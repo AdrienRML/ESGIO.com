@@ -15,7 +15,7 @@ const benefits = [
     icon: Zap,
     title: "6 mois → 3 semaines",
     description:
-      "Notre IA automatise la collecte, le mapping et la generation du rapport. Reduisez votre cycle de reporting de 85%.",
+      "Notre IA automatise la collecte, le mapping et la génération du rapport. Réduisez votre cycle de reporting de 85%.",
     stat: "85%",
     statLabel: "plus rapide",
   },
@@ -23,39 +23,39 @@ const benefits = [
     icon: TrendingDown,
     title: "75% moins cher",
     description:
-      "Eliminez les centaines de jours-hommes de conseil. ESGIO remplace un budget Big Four a 6 chiffres par un abonnement mensuel.",
+      "Éliminez les centaines de jours-hommes de conseil. ESGIO remplace un budget Big Four à 6 chiffres par un abonnement mensuel.",
     stat: "75%",
-    statLabel: "d'economie",
+    statLabel: "d'économie",
   },
   {
     icon: ShieldCheck,
     title: "Rapport Audit-Ready",
     description:
-      "Chaque donnee est sourcee, tracee et documentee. Votre Commissaire aux Comptes recoit un dossier de preuves inattaquable.",
+      "Chaque donnée est sourcée, tracée et documentée. Votre Commissaire aux Comptes reçoit un dossier de preuves inattaquable.",
     stat: "100%",
-    statLabel: "tracabilite",
+    statLabel: "traçabilité",
   },
   {
     icon: Database,
     title: "IA sectorielle",
     description:
-      "Plus ESGIO analyse de rapports, plus son IA est precise pour votre secteur. Luxe, Industrie, Tech : des recommandations ciblees.",
+      "Plus ESGIO analyse de rapports, plus son IA est précise pour votre secteur. Luxe, Industrie, Tech : des recommandations ciblées.",
     stat: "12",
     statLabel: "standards ESRS",
   },
   {
     icon: RefreshCw,
-    title: "Mises a jour reglementaires",
+    title: "Mises à jour réglementaires",
     description:
-      "Des que l'EFRAG modifie un standard, ESGIO est mis a jour. Vous restez toujours conforme sans effort supplementaire.",
+      "Dès que l'EFRAG modifie un standard, ESGIO est mis à jour. Vous restez toujours conforme sans effort supplémentaire.",
     stat: "24h",
-    statLabel: "de reactivite",
+    statLabel: "de réactivité",
   },
   {
     icon: Lock,
-    title: "Hebergement souverain EU",
+    title: "Hébergement souverain EU",
     description:
-      "Vos donnees financieres et sociales sont hebergees exclusivement dans l'Union Europeenne. Conformite RGPD garantie.",
+      "Vos données financières et sociales sont hébergées exclusivement dans l'Union Européenne. Conformité RGPD garantie.",
     stat: "EU",
     statLabel: "souverain",
   },
@@ -63,7 +63,7 @@ const benefits = [
 
 export default function BenefitsSection() {
   return (
-    <section className="bg-surface py-20 lg:py-28">
+    <section className="bg-gradient-to-b from-slate-50 to-white py-20 lg:py-28">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -88,10 +88,11 @@ export default function BenefitsSection() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: index * 0.08 }}
-              className="group relative rounded-2xl border border-border bg-white p-6 transition-all hover:border-primary/20 hover:shadow-lg hover:shadow-primary/5 lg:p-8"
+              className="group relative overflow-hidden rounded-2xl border border-border/80 bg-white p-6 shadow-sm transition-all hover:border-primary/20 hover:shadow-lg hover:shadow-primary/5 lg:p-8"
             >
-              <div className="flex items-start justify-between">
-                <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-primary/10 transition-colors group-hover:bg-primary/15">
+              <div className="absolute top-0 right-0 h-24 w-24 rounded-bl-[80px] bg-gradient-to-bl from-primary/5 to-transparent" />
+              <div className="relative flex items-start justify-between">
+                <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-gradient-to-br from-primary/10 to-teal-500/10 ring-1 ring-primary/10 transition-colors group-hover:from-primary/15 group-hover:to-teal-500/15">
                   <benefit.icon size={24} className="text-primary" />
                 </div>
                 <div className="text-right">

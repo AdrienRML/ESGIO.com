@@ -7,9 +7,9 @@ const steps = [
   {
     step: "01",
     icon: Upload,
-    title: "Importez vos donnees",
+    title: "Importez vos données",
     description:
-      "Connectez vos ERP, uploadez vos documents ou utilisez notre OCR intelligent. ESGIO collecte automatiquement vos donnees ESG depuis toutes vos sources.",
+      "Connectez vos ERP, uploadez vos documents ou utilisez notre OCR intelligent. ESGIO collecte automatiquement vos données ESG depuis toutes vos sources.",
     highlight: "OCR & Import automatique",
   },
   {
@@ -17,15 +17,15 @@ const steps = [
     icon: Cpu,
     title: "L'IA mappe vos ESRS",
     description:
-      "Notre moteur d'IA analyse vos donnees et les associe aux 12 standards ESRS de la directive CSRD. Identification automatique des ecarts de conformite.",
+      "Notre moteur d'IA analyse vos données et les associe aux 12 standards ESRS de la directive CSRD. Identification automatique des écarts de conformité.",
     highlight: "Mapping IA intelligent",
   },
   {
     step: "03",
     icon: FileCheck,
-    title: "Generez votre rapport",
+    title: "Générez votre rapport",
     description:
-      "Obtenez un rapport de durabilite complet, avec dossier de preuves integre, pret pour l'audit de votre Commissaire aux Comptes.",
+      "Obtenez un rapport de durabilité complet, avec dossier de preuves intégré, prêt pour l'audit de votre Commissaire aux Comptes.",
     highlight: "Audit-ready en 1 clic",
   },
 ];
@@ -44,12 +44,12 @@ export default function SolutionSection() {
             La solution
           </span>
           <h2 className="mt-6 text-3xl font-bold text-foreground sm:text-4xl lg:text-5xl">
-            3 etapes pour un rapport{" "}
+            3 étapes pour un rapport{" "}
             <span className="text-primary">CSRD conforme</span>
           </h2>
           <p className="mt-4 text-lg text-muted">
-            ESGIO automatise l&apos;integralite du processus de reporting. De la
-            collecte a la generation du rapport final.
+            ESGIO automatise l&apos;intégralité du processus de reporting. De la
+            collecte à la génération du rapport final.
           </p>
         </motion.div>
 
@@ -70,12 +70,12 @@ export default function SolutionSection() {
                 </div>
               )}
 
-              <div className="group rounded-2xl border border-border bg-surface p-8 transition-all hover:border-primary/30 hover:shadow-lg hover:shadow-primary/5">
+              <div className="group rounded-2xl border border-border/80 bg-white p-8 shadow-sm transition-all hover:border-primary/30 hover:shadow-lg hover:shadow-primary/5">
                 <div className="flex items-center gap-4">
-                  <span className="text-4xl font-black text-primary/20">
+                  <span className="text-4xl font-black text-primary/15">
                     {step.step}
                   </span>
-                  <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-primary/10 transition-colors group-hover:bg-primary/15">
+                  <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-gradient-to-br from-primary/10 to-teal-500/10 ring-1 ring-primary/10 transition-colors group-hover:from-primary/15 group-hover:to-teal-500/15">
                     <step.icon size={24} className="text-primary" />
                   </div>
                 </div>

@@ -13,13 +13,13 @@ export default function UrgencyBanner() {
       <div className="mx-auto flex max-w-7xl items-center justify-center gap-2">
         <AlertTriangle size={14} className="shrink-0" />
         <span>
-          <strong>CSRD 2025 :</strong> Les premieres entreprises doivent publier
-          leur rapport de durabilite cette annee.{" "}
+          <strong>CSRD 2025 :</strong> Les premières entreprises doivent publier
+          leur rapport de durabilité cette année.{" "}
           <a
             href="#cta"
             className="underline underline-offset-2 hover:no-underline"
           >
-            Verifiez votre eligibilite →
+            Vérifiez votre éligibilité →
           </a>
         </span>
         <button

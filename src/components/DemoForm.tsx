@@ -33,7 +33,7 @@ export default function DemoForm() {
           >
             <div className="inline-flex items-center gap-2 rounded-full bg-primary/20 px-4 py-1.5 text-sm font-medium text-primary-light">
               <ShieldCheck size={16} />
-              Mise en conformite CSRD
+              Mise en conformité CSRD
             </div>
             <h2 className="mt-6 text-3xl font-bold text-white sm:text-4xl lg:text-5xl">
               Ne risquez pas
@@ -41,15 +41,15 @@ export default function DemoForm() {
               <span className="text-red-400">75 000 € d&apos;amende.</span>
             </h2>
             <p className="mt-4 text-lg text-slate-400">
-              Planifiez votre demo personnalisee avec un expert CSRD. En 30
-              minutes, decouvrez exactement comment ESGIO s&apos;applique a
+              Planifiez votre démo personnalisée avec un expert CSRD. En 30
+              minutes, découvrez exactement comment ESGIO s&apos;applique à
               votre entreprise.
             </p>
 
             <ul className="mt-8 space-y-4">
               {[
-                "Demo personnalisee sur vos donnees",
-                "Analyse gratuite de votre eligibilite CSRD",
+                "Démo personnalisée sur vos données",
+                "Analyse gratuite de votre éligibilité CSRD",
                 "Estimation du time-to-report pour votre cas",
                 "Sans engagement, sans carte bancaire",
               ].map((item) => (
@@ -87,11 +87,11 @@ export default function DemoForm() {
                   <CheckCircle2 size={32} className="text-primary" />
                 </div>
                 <h3 className="mt-6 text-xl font-bold text-white">
-                  Demande envoyee !
+                  Demande envoyée !
                 </h3>
                 <p className="mt-2 text-slate-400">
-                  Notre equipe vous contactera sous 24h pour planifier votre
-                  demo personnalisee.
+                  Notre équipe vous contactera sous 24h pour planifier votre
+                  démo personnalisée.
                 </p>
               </div>
             ) : (
@@ -100,7 +100,7 @@ export default function DemoForm() {
                 className="rounded-2xl border border-slate-700 bg-slate-800 p-8 lg:p-10"
               >
                 <h3 className="text-xl font-bold text-white">
-                  Demander une demo gratuite
+                  Demander une démo gratuite
                 </h3>
                 <p className="mt-1 text-sm text-slate-400">
                   Remplissez le formulaire, nous vous recontactons sous 24h.
@@ -163,7 +163,7 @@ export default function DemoForm() {
 
                   <div>
                     <label className="mb-1.5 block text-sm font-medium text-slate-300">
-                      Telephone
+                      Téléphone
                     </label>
                     <div className="relative">
                       <Phone
@@ -180,13 +180,13 @@ export default function DemoForm() {
 
                   <div>
                     <label className="mb-1.5 block text-sm font-medium text-slate-300">
-                      Nombre de salaries
+                      Nombre de salariés
                     </label>
                     <select
                       required
                       className="w-full rounded-lg border border-slate-600 bg-slate-700/50 py-3 px-4 text-sm text-white focus:border-primary focus:outline-none focus:ring-1 focus:ring-primary"
                     >
-                      <option value="">Selectionnez</option>
+                      <option value="">Sélectionnez</option>
                       <option value="50-250">50 - 250</option>
                       <option value="250-1000">250 - 1 000</option>
                       <option value="1000-5000">1 000 - 5 000</option>
@@ -199,7 +199,7 @@ export default function DemoForm() {
                   type="submit"
                   className="group mt-6 flex w-full items-center justify-center gap-2 rounded-xl bg-primary py-3.5 text-sm font-semibold text-white shadow-lg shadow-primary/25 transition-all hover:bg-primary-dark hover:shadow-xl hover:shadow-primary/30"
                 >
-                  Planifier ma demo gratuite
+                  Planifier ma démo gratuite
                   <ArrowRight
                     size={16}
                     className="transition-transform group-hover:translate-x-1"
@@ -209,7 +209,7 @@ export default function DemoForm() {
                 <p className="mt-4 text-center text-xs text-slate-500">
                   En soumettant ce formulaire, vous acceptez notre{" "}
                   <a href="#" className="underline hover:text-slate-400">
-                    politique de confidentialite
+                    politique de confidentialité
                   </a>
                   .
                 </p>
