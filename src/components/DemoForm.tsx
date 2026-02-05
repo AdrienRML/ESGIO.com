@@ -15,10 +15,41 @@ import {
 
 export default function DemoForm() {
   const [submitted, setSubmitted] = useState(false);
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState("");
 
-  function handleSubmit(e: FormEvent<HTMLFormElement>) {
+  async function handleSubmit(e: FormEvent<HTMLFormElement>) {
     e.preventDefault();
-    setSubmitted(true);
+    setLoading(true);
+    setError("");
+
+    const form = e.currentTarget;
+    const data = {
+      name: (form.elements.namedItem("name") as HTMLInputElement).value,
+      email: (form.elements.namedItem("email") as HTMLInputElement).value,
+      company: (form.elements.namedItem("company") as HTMLInputElement).value,
+      phone: (form.elements.namedItem("phone") as HTMLInputElement).value,
+      employees: (form.elements.namedItem("employees") as HTMLSelectElement).value,
+    };
+
+    try {
+      const res = await fetch("/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(data),
+      });
+
+      if (!res.ok) {
+        const body = await res.json();
+        throw new Error(body.error || "Une erreur est survenue.");
+      }
+
+      setSubmitted(true);
+    } catch (err) {
+      setError(err instanceof Error ? err.message : "Une erreur est survenue.");
+    } finally {
+      setLoading(false);
+    }
   }
 
   return (
@@ -117,6 +148,7 @@ export default function DemoForm() {
                         className="absolute left-3 top-1/2 -translate-y-1/2 text-slate-500"
                       />
                       <input
+                        name="name"
                         type="text"
                         required
                         placeholder="Jean Dupont"
@@ -135,6 +167,7 @@ export default function DemoForm() {
                         className="absolute left-3 top-1/2 -translate-y-1/2 text-slate-500"
                       />
                       <input
+                        name="email"
                         type="email"
                         required
                         placeholder="jean@entreprise.com"
@@ -153,6 +186,7 @@ export default function DemoForm() {
                         className="absolute left-3 top-1/2 -translate-y-1/2 text-slate-500"
                       />
                       <input
+                        name="company"
                         type="text"
                         required
                         placeholder="Nom de votre entreprise"
@@ -171,6 +205,7 @@ export default function DemoForm() {
                         className="absolute left-3 top-1/2 -translate-y-1/2 text-slate-500"
                       />
                       <input
+                        name="phone"
                         type="tel"
                         placeholder="+33 6 00 00 00 00"
                         className="w-full rounded-lg border border-slate-600 bg-slate-700/50 py-3 pl-10 pr-4 text-sm text-white placeholder:text-slate-500 focus:border-primary focus:outline-none focus:ring-1 focus:ring-primary"
@@ -183,10 +218,13 @@ export default function DemoForm() {
                       Nombre de salariés
                     </label>
                     <select
+                      name="employees"
                       required
                       className="w-full rounded-lg border border-slate-600 bg-slate-700/50 py-3 px-4 text-sm text-white focus:border-primary focus:outline-none focus:ring-1 focus:ring-primary"
                     >
                       <option value="">Sélectionnez</option>
+                      <option value="1-10">1 - 10</option>
+                      <option value="10-50">10 - 50</option>
                       <option value="50-250">50 - 250</option>
                       <option value="250-1000">250 - 1 000</option>
                       <option value="1000-5000">1 000 - 5 000</option>
@@ -195,15 +233,24 @@ export default function DemoForm() {
                   </div>
                 </div>
 
+                {error && (
+                  <p className="mt-2 rounded-lg bg-red-500/10 px-4 py-2 text-sm text-red-400">
+                    {error}
+                  </p>
+                )}
+
                 <button
                   type="submit"
-                  className="group mt-6 flex w-full items-center justify-center gap-2 rounded-xl bg-primary py-3.5 text-sm font-semibold text-white shadow-lg shadow-primary/25 transition-all hover:bg-primary-dark hover:shadow-xl hover:shadow-primary/30"
+                  disabled={loading}
+                  className="group mt-6 flex w-full items-center justify-center gap-2 rounded-xl bg-primary py-3.5 text-sm font-semibold text-white shadow-lg shadow-primary/25 transition-all hover:bg-primary-dark hover:shadow-xl hover:shadow-primary/30 disabled:opacity-60 disabled:cursor-not-allowed"
                 >
-                  Planifier ma démo gratuite
-                  <ArrowRight
-                    size={16}
-                    className="transition-transform group-hover:translate-x-1"
-                  />
+                  {loading ? "Envoi en cours..." : "Planifier ma démo gratuite"}
+                  {!loading && (
+                    <ArrowRight
+                      size={16}
+                      className="transition-transform group-hover:translate-x-1"
+                    />
+                  )}
                 </button>
 
                 <p className="mt-4 text-center text-xs text-slate-500">
