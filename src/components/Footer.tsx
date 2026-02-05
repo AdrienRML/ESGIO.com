@@ -1,3 +1,5 @@
+import Logo from "@/components/Logo";
+
 export default function Footer() {
   return (
     <footer className="border-t border-border bg-white py-12 lg:py-16">
@@ -5,10 +7,8 @@ export default function Footer() {
         <div className="grid grid-cols-2 gap-8 lg:grid-cols-4">
           {/* Brand */}
           <div className="col-span-2 lg:col-span-1">
-            <a href="#" className="flex items-center gap-2">
-              <div className="flex h-9 w-9 items-center justify-center rounded-lg bg-primary">
-                <span className="text-lg font-bold text-white">E</span>
-              </div>
+            <a href="#" className="flex items-center gap-2.5">
+              <Logo size={32} />
               <span className="text-xl font-bold tracking-tight text-foreground">
                 ESG<span className="text-primary">IO</span>
               </span>

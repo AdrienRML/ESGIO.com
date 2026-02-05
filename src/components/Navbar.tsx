@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from "react";
 import { Menu, X } from "lucide-react";
+import Logo from "@/components/Logo";
 
 const navLinks = [
   { label: "Solution", href: "#solution" },
@@ -32,9 +33,7 @@ export default function Navbar() {
         <div className="flex h-[60px] items-center justify-between lg:h-[68px]">
           {/* Logo */}
           <a href="#" className="flex items-center gap-2.5">
-            <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-foreground">
-              <span className="text-sm font-bold text-white">E</span>
-            </div>
+            <Logo size={30} />
             <span className="text-lg font-bold tracking-tight text-foreground">
               ESG<span className="text-primary">IO</span>
             </span>
