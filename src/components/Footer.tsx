@@ -7,11 +7,8 @@ export default function Footer() {
         <div className="grid grid-cols-2 gap-8 lg:grid-cols-4">
           {/* Brand */}
           <div className="col-span-2 lg:col-span-1">
-            <a href="#" className="flex items-center gap-2.5">
-              <Logo size={32} />
-              <span className="text-xl font-bold tracking-tight text-foreground">
-                ESG<span className="text-primary">IO</span>
-              </span>
+            <a href="#" className="flex items-center">
+              <Logo size={30} showText />
             </a>
             <p className="mt-4 max-w-xs text-sm text-muted leading-relaxed">
               La plateforme IA de conformité CSRD. Automatisez votre reporting
