@@ -65,44 +65,53 @@ const features = [
 
 export default function FeaturesSection() {
   return (
-    <section id="features" className="bg-white py-20 lg:py-28">
-      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+    <section id="features" className="relative overflow-hidden bg-[#0B1120] py-20 lg:py-28">
+      {/* Grid pattern */}
+      <div className="pointer-events-none absolute inset-0 opacity-[0.03]" style={{
+        backgroundImage: "linear-gradient(rgba(255,255,255,0.1) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.1) 1px, transparent 1px)",
+        backgroundSize: "60px 60px"
+      }} />
+
+      {/* Glow */}
+      <div className="pointer-events-none absolute top-0 left-1/4 h-[400px] w-[600px] rounded-full bg-primary/5 blur-[120px]" />
+
+      <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           className="mx-auto max-w-3xl text-center"
         >
-          <span className="inline-flex items-center gap-2 rounded-full border border-primary/20 bg-primary/5 px-4 py-1.5 text-sm font-medium text-primary">
+          <span className="inline-flex items-center gap-2 rounded-full border border-primary/20 bg-primary/10 px-4 py-1.5 text-[13px] font-semibold text-primary-light">
             Fonctionnalités
           </span>
-          <h2 className="mt-6 text-3xl font-bold text-foreground sm:text-4xl lg:text-5xl">
+          <h2 className="mt-6 text-3xl font-extrabold tracking-[-0.02em] text-white sm:text-4xl lg:text-5xl">
             Tout ce qu&apos;il faut pour être{" "}
-            <span className="text-primary">conforme</span>
+            <span className="text-primary-light">conforme</span>
           </h2>
-          <p className="mt-4 text-lg text-muted">
+          <p className="mt-4 text-lg text-slate-400">
             Une plateforme complète qui couvre l&apos;intégralité du cycle de
             reporting CSRD.
           </p>
         </motion.div>
 
-        <div className="mt-16 grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-4">
+        <div className="mt-16 grid grid-cols-1 gap-3 sm:grid-cols-2 lg:grid-cols-4">
           {features.map((feature, index) => (
             <motion.div
               key={feature.title}
-              initial={{ opacity: 0, y: 20 }}
+              initial={{ opacity: 0, y: 16 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ delay: index * 0.06 }}
-              className="group rounded-2xl border border-border p-6 transition-all hover:border-primary/20 hover:bg-surface hover:shadow-md"
+              transition={{ delay: index * 0.05 }}
+              className="group rounded-2xl border border-white/[0.06] bg-white/[0.03] p-5 backdrop-blur-sm transition-all duration-300 hover:bg-white/[0.07] hover:border-primary/20 hover:-translate-y-1"
             >
-              <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-primary/10 transition-colors group-hover:bg-primary/15">
-                <feature.icon size={20} className="text-primary" />
+              <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-primary/10 ring-1 ring-primary/20 transition-all group-hover:bg-primary/15 group-hover:shadow-lg group-hover:shadow-primary/10">
+                <feature.icon size={18} className="text-primary-light" />
               </div>
-              <h3 className="mt-4 text-base font-semibold text-foreground">
+              <h3 className="mt-4 text-[14px] font-semibold text-white">
                 {feature.title}
               </h3>
-              <p className="mt-2 text-sm text-muted leading-relaxed">
+              <p className="mt-1.5 text-[13px] text-slate-400 leading-relaxed">
                 {feature.description}
               </p>
             </motion.div>

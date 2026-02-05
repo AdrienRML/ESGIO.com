@@ -1,28 +1,31 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { ArrowRight, ShieldCheck, Clock, BadgeEuro } from "lucide-react";
+import { ArrowRight, ShieldCheck, Clock, BadgeEuro, Sparkles } from "lucide-react";
 
 export default function Hero() {
   return (
-    <section className="relative overflow-hidden bg-gradient-to-b from-slate-50 via-white to-white pt-32 pb-16 lg:pt-40 lg:pb-24">
-      {/* Background decorations */}
+    <section className="relative overflow-hidden pt-32 pb-20 lg:pt-44 lg:pb-32">
+      {/* Dot grid background */}
+      <div className="pointer-events-none absolute inset-0 dot-grid opacity-40" />
+
+      {/* Gradient orbs */}
       <div className="pointer-events-none absolute inset-0">
-        <div className="absolute -top-40 -right-40 h-[600px] w-[600px] rounded-full bg-gradient-to-br from-primary/8 to-teal-400/5 blur-3xl" />
-        <div className="absolute top-1/2 -left-40 h-[500px] w-[500px] rounded-full bg-gradient-to-tr from-primary/5 to-cyan-400/5 blur-3xl" />
-        <div className="absolute bottom-0 left-1/2 h-[300px] w-[800px] -translate-x-1/2 rounded-full bg-gradient-to-t from-primary/3 to-transparent blur-3xl" />
+        <div className="absolute -top-32 right-1/4 h-[600px] w-[600px] rounded-full bg-gradient-to-br from-primary/10 via-teal-400/8 to-transparent blur-[100px]" />
+        <div className="absolute top-1/3 -left-32 h-[500px] w-[500px] rounded-full bg-gradient-to-tr from-indigo-500/6 via-primary/5 to-transparent blur-[100px]" />
+        <div className="absolute -bottom-20 left-1/2 h-[400px] w-[600px] -translate-x-1/2 rounded-full bg-gradient-to-t from-primary/6 to-transparent blur-[80px]" />
       </div>
 
       <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="mx-auto max-w-4xl text-center">
           {/* Badge */}
           <motion.div
-            initial={{ opacity: 0, y: 20 }}
+            initial={{ opacity: 0, y: 16 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5 }}
+            transition={{ duration: 0.4 }}
           >
-            <span className="inline-flex items-center gap-2 rounded-full border border-primary/20 bg-white/80 backdrop-blur-sm px-4 py-1.5 text-sm font-medium text-primary shadow-sm">
-              <span className="h-1.5 w-1.5 rounded-full bg-primary animate-pulse" />
+            <span className="inline-flex items-center gap-2 rounded-full border border-primary/15 bg-white/70 backdrop-blur-md px-4 py-1.5 text-[13px] font-semibold text-primary shadow-sm shadow-primary/5">
+              <Sparkles size={13} className="text-primary" />
               Directive CSRD 2024 — Mise en conformité obligatoire
             </span>
           </motion.div>
@@ -31,11 +34,11 @@ export default function Hero() {
           <motion.h1
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, delay: 0.1 }}
-            className="mt-8 text-4xl font-extrabold leading-[1.1] tracking-tight text-foreground sm:text-5xl lg:text-6xl"
+            transition={{ duration: 0.5, delay: 0.08 }}
+            className="mt-8 text-[2.5rem] font-extrabold leading-[1.08] tracking-[-0.025em] text-foreground sm:text-5xl lg:text-[4rem]"
           >
             Votre rapport CSRD,{" "}
-            <span className="bg-gradient-to-r from-primary via-teal-500 to-cyan-500 bg-clip-text text-transparent">
+            <span className="bg-gradient-to-r from-primary via-teal-400 to-cyan-500 bg-clip-text text-transparent animate-gradient-text">
               automatisé par l&apos;IA
             </span>
             <br />
@@ -44,36 +47,36 @@ export default function Hero() {
 
           {/* Subheadline */}
           <motion.p
-            initial={{ opacity: 0, y: 20 }}
+            initial={{ opacity: 0, y: 16 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, delay: 0.2 }}
-            className="mx-auto mt-6 max-w-2xl text-lg leading-relaxed text-muted sm:text-xl"
+            transition={{ duration: 0.4, delay: 0.16 }}
+            className="mx-auto mt-6 max-w-2xl text-[1.125rem] leading-[1.7] text-muted"
           >
             ESGIO collecte vos données, mappe les 12 standards ESRS et génère un
-            rapport <strong className="text-foreground">audit-ready</strong>{" "}
+            rapport <strong className="font-semibold text-foreground">audit-ready</strong>{" "}
             pour votre Commissaire aux Comptes. Sans cabinet de conseil.
           </motion.p>
 
           {/* CTAs */}
           <motion.div
-            initial={{ opacity: 0, y: 20 }}
+            initial={{ opacity: 0, y: 16 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, delay: 0.3 }}
-            className="mt-10 flex flex-col items-center justify-center gap-4 sm:flex-row"
+            transition={{ duration: 0.4, delay: 0.24 }}
+            className="mt-10 flex flex-col items-center justify-center gap-3 sm:flex-row sm:gap-4"
           >
             <a
               href="#cta"
-              className="group flex items-center gap-2 rounded-2xl bg-gradient-to-r from-primary to-teal-600 px-8 py-4 text-base font-semibold text-white shadow-lg shadow-primary/25 transition-all hover:shadow-xl hover:shadow-primary/30 hover:brightness-110"
+              className="group relative flex items-center gap-2.5 rounded-2xl bg-foreground px-8 py-4 text-[15px] font-semibold text-white transition-all hover:scale-[1.02] hover:shadow-xl hover:shadow-black/10 active:scale-[0.98]"
             >
               Demander une démo gratuite
               <ArrowRight
-                size={18}
-                className="transition-transform group-hover:translate-x-1"
+                size={16}
+                className="transition-transform group-hover:translate-x-0.5"
               />
             </a>
             <a
               href="#solution"
-              className="flex items-center gap-2 rounded-2xl border border-border/80 bg-white/80 backdrop-blur-sm px-8 py-4 text-base font-semibold text-foreground shadow-sm transition-all hover:border-primary/30 hover:bg-white hover:shadow-md"
+              className="flex items-center gap-2 rounded-2xl border border-border bg-white px-8 py-4 text-[15px] font-semibold text-foreground transition-all hover:border-primary/25 hover:shadow-lg hover:shadow-primary/5 active:scale-[0.98]"
             >
               Découvrir la solution
             </a>
@@ -81,86 +84,86 @@ export default function Hero() {
 
           {/* Trust badges */}
           <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
             transition={{ duration: 0.5, delay: 0.4 }}
-            className="mt-14 flex flex-col items-center justify-center gap-6 sm:flex-row sm:gap-10"
+            className="mt-14 flex flex-col items-center justify-center gap-5 sm:flex-row sm:gap-8"
           >
-            <div className="flex items-center gap-2 text-sm text-muted">
-              <Clock size={16} className="text-primary" />
-              <span>
-                <strong className="text-foreground">3 semaines</strong> au lieu
-                de 6 mois
-              </span>
-            </div>
-            <div className="flex items-center gap-2 text-sm text-muted">
-              <BadgeEuro size={16} className="text-primary" />
-              <span>
-                <strong className="text-foreground">75% moins cher</strong>{" "}
-                qu&apos;un Big Four
-              </span>
-            </div>
-            <div className="flex items-center gap-2 text-sm text-muted">
-              <ShieldCheck size={16} className="text-primary" />
-              <span>
-                <strong className="text-foreground">Audit-ready</strong>{" "}
-                garanti
-              </span>
-            </div>
+            {[
+              { icon: Clock, label: "3 semaines", sub: "au lieu de 6 mois" },
+              { icon: BadgeEuro, label: "75% moins cher", sub: "qu'un Big Four" },
+              { icon: ShieldCheck, label: "Audit-ready", sub: "garanti" },
+            ].map((badge) => (
+              <div key={badge.label} className="flex items-center gap-2.5 rounded-full border border-border/60 bg-white/60 backdrop-blur-sm px-4 py-2 shadow-sm">
+                <badge.icon size={15} className="text-primary" />
+                <span className="text-[13px] text-muted">
+                  <strong className="font-semibold text-foreground">{badge.label}</strong>{" "}
+                  {badge.sub}
+                </span>
+              </div>
+            ))}
           </motion.div>
         </div>
 
-        {/* Dashboard Preview */}
+        {/* Dashboard Preview - Bento style */}
         <motion.div
-          initial={{ opacity: 0, y: 40 }}
+          initial={{ opacity: 0, y: 50 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7, delay: 0.5 }}
-          className="mx-auto mt-16 max-w-5xl"
+          className="mx-auto mt-20 max-w-5xl"
         >
-          <div className="rounded-3xl border border-border/60 bg-white/80 backdrop-blur-sm p-2 shadow-2xl shadow-black/8">
-            <div className="rounded-2xl bg-gradient-to-br from-slate-50 to-slate-100/80 p-6 sm:p-10">
-              {/* Mock Dashboard */}
-              <div className="flex items-center gap-2 mb-8">
-                <div className="h-3 w-3 rounded-full bg-red-400/80" />
-                <div className="h-3 w-3 rounded-full bg-amber-400/80" />
-                <div className="h-3 w-3 rounded-full bg-green-400/80" />
-                <span className="ml-3 text-xs text-muted/60 font-mono">
-                  dashboard.esgio.com
-                </span>
-              </div>
+          <div className="gradient-border overflow-hidden rounded-2xl shadow-2xl shadow-black/8">
+            <div className="rounded-2xl bg-white p-1.5">
+              <div className="rounded-xl bg-gradient-to-b from-slate-50 to-white p-5 sm:p-8">
+                {/* Browser chrome */}
+                <div className="flex items-center gap-6 mb-6">
+                  <div className="flex items-center gap-1.5">
+                    <div className="h-2.5 w-2.5 rounded-full bg-[#FF5F57]" />
+                    <div className="h-2.5 w-2.5 rounded-full bg-[#FDBB2E]" />
+                    <div className="h-2.5 w-2.5 rounded-full bg-[#27CA40]" />
+                  </div>
+                  <div className="flex-1 rounded-lg bg-slate-100 px-4 py-1.5 text-xs text-slate-400 font-mono">
+                    dashboard.esgio.com
+                  </div>
+                </div>
 
-              <div className="grid grid-cols-1 gap-4 sm:grid-cols-3">
-                <DashboardCard
-                  label="Score de Complétude"
-                  value="87%"
-                  trend="+12% ce mois"
-                  color="text-primary"
-                />
-                <DashboardCard
-                  label="Standards ESRS Couverts"
-                  value="10/12"
-                  trend="2 en cours"
-                  color="text-amber-600"
-                />
-                <DashboardCard
-                  label="Time-to-Report"
-                  value="18 jours"
-                  trend="-4 jours vs. Q3"
-                  color="text-green-600"
-                />
-              </div>
+                {/* Bento grid */}
+                <div className="grid grid-cols-1 gap-3 sm:grid-cols-3">
+                  <BentoCard
+                    label="Score de Complétude"
+                    value="87%"
+                    trend="+12%"
+                    trendLabel="ce mois"
+                    color="primary"
+                  />
+                  <BentoCard
+                    label="Standards ESRS"
+                    value="10/12"
+                    trend="2"
+                    trendLabel="en cours"
+                    color="amber"
+                  />
+                  <BentoCard
+                    label="Time-to-Report"
+                    value="18j"
+                    trend="-4j"
+                    trendLabel="vs. Q3"
+                    color="green"
+                  />
+                </div>
 
-              {/* Progress bars */}
-              <div className="mt-8 space-y-3">
-                <ProgressBar label="E1 - Changement climatique" progress={95} />
-                <ProgressBar
-                  label="S1 - Effectifs de l'entreprise"
-                  progress={82}
-                />
-                <ProgressBar
-                  label="G1 - Conduite des affaires"
-                  progress={71}
-                />
+                {/* Progress section */}
+                <div className="mt-4 rounded-xl bg-white border border-slate-100 p-5">
+                  <div className="flex items-center justify-between mb-4">
+                    <span className="text-xs font-semibold uppercase tracking-wider text-slate-400">Progression ESRS</span>
+                    <span className="rounded-full bg-primary/10 px-2.5 py-0.5 text-[11px] font-bold text-primary">En cours</span>
+                  </div>
+                  <div className="space-y-3">
+                    <ProgressBar label="E1 - Changement climatique" progress={95} />
+                    <ProgressBar label="S1 - Effectifs de l'entreprise" progress={82} />
+                    <ProgressBar label="G1 - Conduite des affaires" progress={71} />
+                  </div>
+                </div>
               </div>
             </div>
           </div>
@@ -170,44 +173,51 @@ export default function Hero() {
   );
 }
 
-function DashboardCard({
+function BentoCard({
   label,
   value,
   trend,
+  trendLabel,
   color,
 }: {
   label: string;
   value: string;
   trend: string;
-  color: string;
+  trendLabel: string;
+  color: "primary" | "amber" | "green";
 }) {
+  const colors = {
+    primary: { value: "text-primary", bg: "bg-primary/5", badge: "text-primary bg-primary/10" },
+    amber: { value: "text-amber-600", bg: "bg-amber-50", badge: "text-amber-600 bg-amber-100" },
+    green: { value: "text-emerald-600", bg: "bg-emerald-50", badge: "text-emerald-600 bg-emerald-100" },
+  };
+  const c = colors[color];
+
   return (
-    <div className="rounded-2xl bg-white p-5 shadow-sm border border-slate-100/80">
-      <p className="text-xs font-medium uppercase tracking-wider text-muted">
+    <div className={`rounded-xl ${c.bg} border border-white p-5`}>
+      <p className="text-[11px] font-semibold uppercase tracking-wider text-slate-400">
         {label}
       </p>
-      <p className={`mt-2 text-3xl font-bold ${color}`}>{value}</p>
-      <p className="mt-1 text-xs text-muted">{trend}</p>
+      <div className="mt-2 flex items-end justify-between">
+        <p className={`text-3xl font-extrabold tracking-tight ${c.value}`}>{value}</p>
+        <span className={`rounded-md px-2 py-0.5 text-[11px] font-bold ${c.badge}`}>
+          {trend} <span className="font-medium opacity-70">{trendLabel}</span>
+        </span>
+      </div>
     </div>
   );
 }
 
-function ProgressBar({
-  label,
-  progress,
-}: {
-  label: string;
-  progress: number;
-}) {
+function ProgressBar({ label, progress }: { label: string; progress: number }) {
   return (
     <div>
       <div className="flex items-center justify-between mb-1.5">
-        <span className="text-sm font-medium text-foreground">{label}</span>
-        <span className="text-sm font-semibold text-primary">{progress}%</span>
+        <span className="text-[13px] font-medium text-slate-600">{label}</span>
+        <span className="text-[13px] font-bold text-primary">{progress}%</span>
       </div>
-      <div className="h-2 w-full rounded-full bg-slate-200/80">
+      <div className="h-1.5 w-full overflow-hidden rounded-full bg-slate-100">
         <div
-          className="h-2 rounded-full bg-gradient-to-r from-primary to-teal-400 transition-all duration-1000"
+          className="h-full rounded-full bg-gradient-to-r from-primary to-teal-400"
           style={{ width: `${progress}%` }}
         />
       </div>

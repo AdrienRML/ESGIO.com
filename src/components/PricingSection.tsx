@@ -60,18 +60,20 @@ const addons = [
 
 export default function PricingSection() {
   return (
-    <section id="pricing" className="bg-white py-20 lg:py-28">
-      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+    <section id="pricing" className="relative py-20 lg:py-28">
+      <div className="pointer-events-none absolute inset-0 dot-grid opacity-30" />
+
+      <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           className="mx-auto max-w-3xl text-center"
         >
-          <span className="inline-flex items-center gap-2 rounded-full border border-primary/20 bg-primary/5 px-4 py-1.5 text-sm font-medium text-primary">
+          <span className="inline-flex items-center gap-2 rounded-full border border-primary/15 bg-primary/5 px-4 py-1.5 text-[13px] font-semibold text-primary">
             Tarifs
           </span>
-          <h2 className="mt-6 text-3xl font-bold text-foreground sm:text-4xl lg:text-5xl">
+          <h2 className="mt-6 text-3xl font-extrabold tracking-[-0.02em] text-foreground sm:text-4xl lg:text-5xl">
             Un investissement,{" "}
             <span className="text-primary">pas un coût</span>
           </h2>
@@ -82,7 +84,7 @@ export default function PricingSection() {
         </motion.div>
 
         {/* Plans */}
-        <div className="mt-16 grid grid-cols-1 gap-8 lg:grid-cols-2 lg:gap-6 mx-auto max-w-4xl">
+        <div className="mt-16 grid grid-cols-1 gap-6 lg:grid-cols-2 mx-auto max-w-4xl">
           {plans.map((plan, index) => (
             <motion.div
               key={plan.name}
@@ -90,37 +92,37 @@ export default function PricingSection() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: index * 0.1 }}
-              className={`relative rounded-2xl border p-8 lg:p-10 ${
+              className={`relative overflow-hidden rounded-2xl p-7 transition-all duration-300 hover:-translate-y-1 lg:p-8 ${
                 plan.highlighted
-                  ? "border-primary bg-primary/[0.02] shadow-lg shadow-primary/10"
-                  : "border-border bg-white"
+                  ? "gradient-border bg-white shadow-xl shadow-primary/8"
+                  : "border border-border bg-white hover:shadow-lg hover:shadow-primary/5"
               }`}
             >
               {plan.badge && (
-                <span className="absolute -top-3 left-8 rounded-full bg-primary px-4 py-1 text-xs font-semibold text-white">
+                <span className="absolute top-0 right-8 rounded-b-lg bg-foreground px-3 py-1 text-[11px] font-bold text-white uppercase tracking-wide">
                   {plan.badge}
                 </span>
               )}
 
-              <h3 className="text-xl font-bold text-foreground">{plan.name}</h3>
-              <p className="mt-1 text-sm text-muted">{plan.description}</p>
+              <h3 className="text-lg font-bold text-foreground">{plan.name}</h3>
+              <p className="mt-1 text-[13px] text-muted">{plan.description}</p>
 
-              <div className="mt-6 flex items-baseline gap-1">
-                <span className="text-5xl font-extrabold text-foreground">
+              <div className="mt-5 flex items-baseline gap-1">
+                <span className="text-4xl font-extrabold tracking-tight text-foreground">
                   {plan.price}€
                 </span>
-                <span className="text-muted">{plan.period}</span>
+                <span className="text-muted text-sm">{plan.period}</span>
               </div>
-              <p className="mt-1 text-xs text-muted">HT — Engagement annuel</p>
+              <p className="mt-1 text-[11px] text-muted">HT — Engagement annuel</p>
 
-              <ul className="mt-8 space-y-3">
+              <ul className="mt-6 space-y-2.5">
                 {plan.features.map((feature) => (
                   <li
                     key={feature}
-                    className="flex items-start gap-3 text-sm text-foreground"
+                    className="flex items-start gap-2.5 text-[13px] text-foreground"
                   >
                     <Check
-                      size={16}
+                      size={14}
                       className="mt-0.5 shrink-0 text-primary"
                     />
                     {feature}
@@ -130,14 +132,14 @@ export default function PricingSection() {
 
               <a
                 href="#cta"
-                className={`mt-8 flex w-full items-center justify-center gap-2 rounded-xl px-6 py-3.5 text-sm font-semibold transition-all ${
+                className={`mt-7 flex w-full items-center justify-center gap-2 rounded-xl px-6 py-3 text-[13px] font-semibold transition-all hover:scale-[1.01] active:scale-[0.99] ${
                   plan.highlighted
-                    ? "bg-primary text-white shadow-lg shadow-primary/25 hover:bg-primary-dark"
-                    : "border border-border bg-surface text-foreground hover:border-primary/30 hover:bg-primary/5"
+                    ? "bg-foreground text-white hover:bg-foreground/90"
+                    : "border border-border bg-white text-foreground hover:bg-surface"
                 }`}
               >
                 {plan.cta}
-                <ArrowRight size={16} />
+                <ArrowRight size={14} />
               </a>
             </motion.div>
           ))}
@@ -148,51 +150,52 @@ export default function PricingSection() {
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="mx-auto mt-12 max-w-4xl"
+          className="mx-auto mt-10 max-w-4xl"
         >
-          <h3 className="text-center text-lg font-semibold text-foreground mb-6">
-            Add-ons à haute valeur ajoutée
+          <h3 className="text-center text-[13px] font-bold uppercase tracking-wider text-muted mb-4">
+            Add-ons
           </h3>
-          <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
+          <div className="grid grid-cols-1 gap-3 sm:grid-cols-2">
             {addons.map((addon) => (
               <div
                 key={addon.name}
-                className="rounded-xl border border-border bg-surface p-6"
+                className="rounded-xl border border-border bg-white p-5 transition-all hover:shadow-md"
               >
                 <div className="flex items-center justify-between">
-                  <h4 className="font-semibold text-foreground">{addon.name}</h4>
-                  <span className="text-sm font-bold text-primary">
+                  <h4 className="text-[14px] font-semibold text-foreground">{addon.name}</h4>
+                  <span className="text-[13px] font-bold text-primary">
                     {addon.price}
                   </span>
                 </div>
-                <p className="mt-2 text-sm text-muted">{addon.description}</p>
+                <p className="mt-1.5 text-[13px] text-muted">{addon.description}</p>
               </div>
             ))}
           </div>
         </motion.div>
 
-        {/* Modèle Wholesale */}
+        {/* Partner wholesale */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="mx-auto mt-12 max-w-4xl rounded-2xl border border-primary/20 bg-primary/5 p-8 text-center"
+          className="mx-auto mt-10 max-w-4xl"
         >
-          <h3 className="text-xl font-bold text-foreground">
-            Vous êtes un cabinet d&apos;expertise comptable ?
-          </h3>
-          <p className="mt-2 text-muted">
-            Découvrez notre modèle Partenaire (Wholesale). Utilisez ESGIO pour
-            servir vos propres clients avec une licence par dossier. Marge
-            garantie.
-          </p>
-          <a
-            href="#cta"
-            className="mt-6 inline-flex items-center gap-2 rounded-xl bg-primary px-6 py-3 text-sm font-semibold text-white transition-all hover:bg-primary-dark"
-          >
-            Devenir Partenaire
-            <ArrowRight size={16} />
-          </a>
+          <div className="gradient-border overflow-hidden rounded-2xl p-7 text-center">
+            <h3 className="text-lg font-bold text-foreground">
+              Vous êtes un cabinet d&apos;expertise comptable ?
+            </h3>
+            <p className="mt-2 text-[15px] text-muted">
+              Découvrez notre modèle Partenaire (Wholesale). Utilisez ESGIO pour
+              servir vos propres clients avec une licence par dossier.
+            </p>
+            <a
+              href="#cta"
+              className="mt-5 inline-flex items-center gap-2 rounded-xl bg-foreground px-6 py-3 text-[13px] font-semibold text-white transition-all hover:bg-foreground/90 hover:scale-[1.02] active:scale-[0.98]"
+            >
+              Devenir Partenaire
+              <ArrowRight size={14} />
+            </a>
+          </div>
         </motion.div>
       </div>
     </section>

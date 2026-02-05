@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Upload, Cpu, FileCheck, ArrowRight } from "lucide-react";
+import { Upload, Cpu, FileCheck } from "lucide-react";
 
 const steps = [
   {
@@ -32,7 +32,7 @@ const steps = [
 
 export default function SolutionSection() {
   return (
-    <section id="solution" className="bg-white py-20 lg:py-28">
+    <section id="solution" className="relative py-20 lg:py-28">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -40,10 +40,10 @@ export default function SolutionSection() {
           viewport={{ once: true }}
           className="mx-auto max-w-3xl text-center"
         >
-          <span className="inline-flex items-center gap-2 rounded-full border border-primary/20 bg-primary/5 px-4 py-1.5 text-sm font-medium text-primary">
+          <span className="inline-flex items-center gap-2 rounded-full border border-primary/15 bg-primary/5 px-4 py-1.5 text-[13px] font-semibold text-primary">
             La solution
           </span>
-          <h2 className="mt-6 text-3xl font-bold text-foreground sm:text-4xl lg:text-5xl">
+          <h2 className="mt-6 text-3xl font-extrabold tracking-[-0.02em] text-foreground sm:text-4xl lg:text-5xl">
             3 étapes pour un rapport{" "}
             <span className="text-primary">CSRD conforme</span>
           </h2>
@@ -53,40 +53,41 @@ export default function SolutionSection() {
           </p>
         </motion.div>
 
-        <div className="mt-16 grid grid-cols-1 gap-8 lg:grid-cols-3 lg:gap-6">
+        <div className="mt-16 grid grid-cols-1 gap-6 lg:grid-cols-3">
           {steps.map((step, index) => (
             <motion.div
               key={step.step}
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ delay: index * 0.15 }}
+              transition={{ delay: index * 0.12 }}
               className="relative"
             >
-              {/* Connector */}
+              {/* Connector line */}
               {index < steps.length - 1 && (
-                <div className="absolute right-0 top-16 hidden translate-x-1/2 lg:block">
-                  <ArrowRight size={20} className="text-border" />
-                </div>
+                <div className="absolute top-12 right-0 hidden h-px w-6 translate-x-full bg-gradient-to-r from-border to-transparent lg:block" />
               )}
 
-              <div className="group rounded-2xl border border-border/80 bg-white p-8 shadow-sm transition-all hover:border-primary/30 hover:shadow-lg hover:shadow-primary/5">
-                <div className="flex items-center gap-4">
-                  <span className="text-4xl font-black text-primary/15">
-                    {step.step}
-                  </span>
-                  <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-gradient-to-br from-primary/10 to-teal-500/10 ring-1 ring-primary/10 transition-colors group-hover:from-primary/15 group-hover:to-teal-500/15">
-                    <step.icon size={24} className="text-primary" />
+              <div className="group relative overflow-hidden rounded-2xl border border-border bg-white p-7 transition-all hover:shadow-xl hover:shadow-primary/5 hover:-translate-y-1 duration-300">
+                {/* Step number watermark */}
+                <span className="absolute -top-3 -right-2 text-[80px] font-black leading-none text-primary/[0.04]">
+                  {step.step}
+                </span>
+
+                <div className="relative">
+                  <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-gradient-to-br from-primary/10 to-teal-400/10 ring-1 ring-primary/[0.08]">
+                    <step.icon size={22} className="text-primary" />
                   </div>
-                </div>
-                <h3 className="mt-6 text-xl font-bold text-foreground">
-                  {step.title}
-                </h3>
-                <p className="mt-3 text-muted leading-relaxed">
-                  {step.description}
-                </p>
-                <div className="mt-4 inline-flex items-center gap-1 rounded-full bg-primary/5 px-3 py-1 text-xs font-semibold text-primary">
-                  {step.highlight}
+
+                  <h3 className="mt-5 text-lg font-bold text-foreground">
+                    {step.title}
+                  </h3>
+                  <p className="mt-2.5 text-[15px] text-muted leading-relaxed">
+                    {step.description}
+                  </p>
+                  <div className="mt-4 inline-flex items-center rounded-lg bg-primary/5 px-3 py-1.5 text-xs font-semibold text-primary">
+                    {step.highlight}
+                  </div>
                 </div>
               </div>
             </motion.div>
