@@ -44,7 +44,7 @@ export async function POST(request: Request) {
             "Content-Type": "application/json",
           },
           body: JSON.stringify({
-            from: "ESGIO <noreply@esgio.com>",
+            from: "ESGIO <onboarding@resend.dev>",
             to: [notifyEmail],
             subject: `Nouvelle demande de démo — ${body.company}`,
             html: `
